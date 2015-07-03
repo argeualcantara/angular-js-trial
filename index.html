@@ -1,0 +1,20 @@
+<html ng-app="app">
+	<head>
+		<title>AngularJS</title>
+		<script src="scripts/angular.min.js"></script>
+    	<script src="app/consumer/consumer.modules.js"></script>
+		<script src="app/consumer/consumer.js"></script>
+    	<script src="app/app.modules.js"></script>
+	</head>
+
+	<body ng-controller="ConsumerCtrl">
+		<div>
+			<p>JSON Response (First ten):</p>
+			<ul ng-repeat='json in dados | limitTo: 10'>
+				<li >
+					{{$index + 1}} - Age: {{json.age}} - Tax: {{json.tax}}
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>
