@@ -1,6 +1,6 @@
 (function(){
 	'use strict';
 	
-	angular.module('app', ['ConsumerApp']);
+	angular.module('app', ['app.consumer', 'app.service']);
 
 })();

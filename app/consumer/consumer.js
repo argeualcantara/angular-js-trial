@@ -1,12 +1,19 @@
 (function(){
 	'use strict';
-	angular.module('ConsumerApp').controller('ConsumerCtrl', Consumer);
+	angular.module('app.consumer').controller('ConsumerCtrl', Consumer);
 
-	function Consumer($scope, $http) {
-		$http.get('https://public.opencpu.org/ocpu/library/MASS/data/Boston/json').
-			success(function(data) {
-				$scope.dados = data;
+	function Consumer(service) {
+		var vm = this;
+		
+		 loaadJsonData();
+		
+		
+		function loaadJsonData(){
+			return service.getJsonData().then(function(response){
+				return vm.dados = response.data;
 			});
+		}
 	}
+	
 	
 })();

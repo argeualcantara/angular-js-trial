@@ -1,6 +1,6 @@
 (function(){
 	'use strict';
 	
-	angular.module('ConsumerApp', []);
+	angular.module('app.consumer', []);
 
 })();
