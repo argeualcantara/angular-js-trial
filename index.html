@@ -7,16 +7,40 @@
     	<script src="app/consumer/consumer.modules.js"></script>
 		<script src="app/consumer/consumer.js"></script>
     	<script src="app/app.modules.js"></script>
+		<link rel="stylesheet" href="css/table.min.css"/>
 	</head>
 
 	<body ng-controller="ConsumerCtrl as vm">
-		<div>
-			<p>JSON Response (First ten):</p>
-			<ul ng-repeat='json in vm.dados | limitTo: 10'>
-				<li >
-					{{$index + 1}} - Age: {{json.age}} - Tax: {{json.tax}}
-				</li>
-			</ul>
+		<div style="width: 70%;">
+			<h1>First ten Jsons from REST response</h1>
+			<table class="ui celled table">
+				<thead>
+					<tr>
+					<th>Id</th>    <th>Crim</th>  <th>Zn</th>  <th>Indus</th> <th>Chas</th> <th>Nox</th>
+					<th>Rm</th>    <th>Age</th>   <th>Dis</th> <th>Rad</th>   <th>Tax</th>  <th>PTRatio</th>
+					<th>Black</th> <th>LStat</th> <th>Crim</th>
+					</tr>
+				</thead>
+				<tbody ng-repeat='json in vm.dados | limitTo: 10'>
+					<tr>
+						<td>{{$index + 1}}</td>
+						<td>{{json.crim}}</td>
+						<td>{{json.zn}}</td>
+						<td>{{json.indus}}</td>
+						<td>{{json.chas}}</td>
+						<td>{{json.nox}}</td>
+						<td>{{json.rm}}</td>
+						<td>{{json.age}}</td>
+						<td>{{json.dis}}</td>
+						<td>{{json.rad}}</td>
+						<td>{{json.tax}}</td>
+						<td>{{json.ptratio}}</td>
+						<td>{{json.black}}</td>
+						<td>{{json.lstat}}</td>
+						<td>{{json.medv}}</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 	</body>
 </html>

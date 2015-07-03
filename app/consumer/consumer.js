@@ -5,12 +5,12 @@
 	function Consumer(service) {
 		var vm = this;
 		
-		 loaadJsonData();
+		 loadJsonData();
 		
 		
-		function loaadJsonData(){
+		function loadJsonData(){
 			return service.getJsonData().then(function(response){
-				return vm.dados = response.data;
+				vm.dados = response.data;
 			});
 		}
 	}
